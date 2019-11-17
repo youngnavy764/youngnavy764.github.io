@@ -152,6 +152,142 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jsp中session的用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/17/jsp中session的用法/">jsp中session的用法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/17/jsp中session的用法/" class="archive-article-date">
+  	<time datetime="2019-11-17T11:14:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>举个例子，建立如下4个文件：<br>020.jsp<br>&lt;%@ page contentType=”text/html;charset=GB2312”%&gt;</p>
+<html>
+<body>
+<form method="POST" action="021.jsp">
+请输入用户名：
+<input type="text" name="name">
+<input type="submit" value="下一步">
+</form>
+</body>
+</html>
+021.jsp
+<%@ page contenttype="text/html;charset=GB2312" %>
+<html>
+<body>
+<%@ page language="java" %>
+<%! string name ;%>
+<% name="request.getParameter("name");" session.putvalue("name",name); %>
+您的用户名是:<%=name%>
+<p>
+<form method="POST" action="022.jsp">
+您要报考的学校：
+<select name="school">
+<option selected>－－请选择学校－－
+</option><option value="交通大学">交通大学
+</option><option value="复旦大学">复旦大学
+</option><option value="华东师范大学">华东师范大学
+</option><option value="华东理工大学">华东理工大学
+</option><option value="上海大学">上海大学
+</option><option value="上海水产大学">上海水产大学
+</option></select>
+<input type="submit" value="下一步">
+</form></p></%=name%></%></%!></%@></body>
+</html>
+022.jsp
+<%@ page contenttype="text/html;charset=GB2312" %>
+<html>
+<body>
+<%@ page language="java" %>
+<%! string school ;%>
+<% string name="(String)" session.getvalue("name"); session.putvalue("name",name); school="request.getParameter("school");" session.putvalue("school",school); %>
+您的用户名:<%=name%>
+<p>
+您报考的学校：<%=school%>
+<p>
+<form method="POST" action="023.jsp">
+您要报考的专业：
+<select name="class1">
+<option selected>－－请选择专业－－
+</option><option value="生物技术">生物技术
+</option><option value="信息工程">信息工程
+</option><option value="电气自动化">电气自动化
+</option><option value="计算机科学与技术">计算机科学与技术
+</option><option value="国际商务">国际商务
+</option><option value="物流">物流
+</option></select>
+<input type="submit" value="下一步">
+</form></p></%=school%></p></%=name%></%></%!></%@></body>
+</html>
+023.jsp
+<%@ page contenttype="text/html;charset=GB2312" %>
+<html>
+<body>
+<%@ page language="java" %>
+<%! string class1 ;%>
+<% class1="request.getParameter("class1");" string name="(String)" session.getvalue("name"); school="(String)" session.getvalue("school"); %>
+您的用户名:<%=name%>
+<p>
+您报考的学校：<%=school%>
+<p>
+您报考的学校：<%=class1%>
+<p>
+以上是你所填写的信息,确认正确请单击提交。
+<input type="submit" value="提交" onclick="alert("您报考了此校的研究生")">
+</p></%=class1%></p></%=school%></p></%=name%></%></%!></%@></body>
+</html></%@></%@></%@>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/17/jsp中session的用法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jsp中cookie的用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1020,81 +1156,6 @@ as</code></pre><p>*/</p>
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/10/30/数据库的简单用法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-第一次课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/30/第一次课/">第一次课</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/30/第一次课/" class="archive-article-date">
-  	<time datetime="2019-10-30T09:22:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>jsp输出当前时间<br>&lt;%@page import=”java.text.SimpleDateFormat”%&gt;<br>&lt;%@page import=”java.util.*”%&gt;<br>&lt;%@ page language=”java” contentType=”text/html; charset=UTF-8”<br>    pageEncoding=”UTF-8”%&gt;<br><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"></p>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>JSP在页面显示实时时间</title>
-</head>
-<body>
-    <% date d="new" date(); simpledateformat df="new" simpledateformat("yyyy-mm-dd hh:mm:ss"); string now="df.format(d);" %>
-
-<pre><code>当前时间：&lt;%=now %&gt;</code></pre></%></body>
-</html>
-
-<p>————————————————<br>版权声明：本文为CSDN博主「m0_38056893」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/m0_38056893/article/details/79766752" target="_blank" rel="noopener">https://blog.csdn.net/m0_38056893/article/details/79766752</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/30/第一次课/">展开全文 >></a>
         </p>
       
 
