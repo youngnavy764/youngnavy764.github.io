@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>九大内置对象 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="JSP内置对象，是指可以不加声明和创建就可以在JSP页面脚本(Java程序片和Java表达式)中使用的成员变量。   JSP共有以下9种基本内置组件(可与ASP的6种内部组件相对应): 1.request对象   客户端的请求信息被封装在request对象中，通过它才能了解到客户的需求，然后做出响应。它是   HttpServletRequest类的实例。   request对象具有请求域,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="九大内置对象">
+<meta property="og:url" content="http://yoursite.com/2019/10/31/九大内置对象/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JSP内置对象，是指可以不加声明和创建就可以在JSP页面脚本(Java程序片和Java表达式)中使用的成员变量。   JSP共有以下9种基本内置组件(可与ASP的6种内部组件相对应): 1.request对象   客户端的请求信息被封装在request对象中，通过它才能了解到客户的需求，然后做出响应。它是   HttpServletRequest类的实例。   request对象具有请求域,">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-31T10:57:08.037Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="九大内置对象">
+<meta name="twitter:description" content="JSP内置对象，是指可以不加声明和创建就可以在JSP页面脚本(Java程序片和Java表达式)中使用的成员变量。   JSP共有以下9种基本内置组件(可与ASP的6种内部组件相对应): 1.request对象   客户端的请求信息被封装在request对象中，通过它才能了解到客户的需求，然后做出响应。它是   HttpServletRequest类的实例。   request对象具有请求域,">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,105 +154,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-jsp登录界面" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-九大内置对象" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/17/jsp登录界面/">jsp登录界面</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/17/jsp登录界面/" class="archive-article-date">
-  	<time datetime="2019-11-17T10:45:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>实现结果：在login.jsp页面提交用户名和密码(可以验证是否为空)，点击登录跳转到loginResult.jsp页面进行验证并显示结果</p>
-<p>JSP + JDBC + MySQL</p>
-<p>login.jsp</p>
-<p>设计一个表单，内容为两个输入框，一个用来输入用户名，另一个用来输入密码，并有一个提交按钮</p>
-<p>用JavaScript函数验证输入框是否都不为空</p>
-<p>代码为：</p>
-<p>复制代码<br> 1 &lt;%@ page language=”java” contentType=”text/html; charset=UTF-8”<br> 2     pageEncoding=”UTF-8”%&gt;<br> 3 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><br> 4 <html><br> 5 <head><meta name="generator" content="Hexo 3.9.0"><br> 6 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><br> 7 <script type="text/javascript"><br> 8     function $(id) {<br> 9         return document.getElementById(id);<br>10     }<br>11<br>12     function check() {<br>13         var user = $("user").value;<br>14         var pwd = $("pwd").value;<br>15<br>16         $("userInfo").innerHTML="";<br>17         $("pwdInfo").innerHTML="";<br>18<br>19         if(user == "") {<br>20             $("userInfo").innerHTML="用户名不能为空！";<br>21             $("user").focus();<br>22             return false;<br>23         }<br>24<br>25         if(pwd == "") {<br>26             $("pwdInfo").innerHTML="密码不能为空！";<br>27             $("pwd").focus();<br>28             return false;<br>29         }<br>30<br>31         return true;<br>32     }<br>33 </script><br>34<br>35 <style type="text/css"><br>36     #userInfo{color:red;}<br>37     #pwdInfo{color:red;}<br>38 </style><br>39<br>40 <title>登录</title><br>41<br>42 </head><br>43<br>44 <body><br>45     <center><br>46         <form action="loginResult.jsp" method="post" onsubmit="return check()"><br>47             <br><br><br><br><br><br><br>48             <table><br>49                 <tr><td>用户名：</td><td><input type="text" name="userName" id="user"><span id="userInfo"></span></td></tr><br>50                 <tr><td>密码：</td><td><input type="password" name="userPwd" id="pwd"><span id="pwdInfo"></span></td></tr><br>51                 <tr><td></td><td><input type="submit" value="登     录"></td><br>52<br>53             </tr></table><br>54         </form><br>55     </center><br>56 </body><br>57<br>58 </html><br>复制代码</p>
-<p>loginResult.jsp页面</p>
-<p>1、利用JSP内置对象获取用户名和密码</p>
-<p>1    　　　String user = request.getParameter(“userName”);<br>2         String password = request.getParameter(“userPwd”);<br>2、注册驱动MySQL的驱动程序</p>
-<p>Class.forName(“com.mysql.jdbc.Driver”);<br>3、构建连接符号字</p>
-<p>String url1 = “jdbc:mysql://localhost:3306/“ + 数据库名;<br>String url2 = “?user=” + 数据库用户名 + “&amp;password=” + 数据库密码;<br>String url3 = “&amp;useUnicode=true&amp;characterEncoding=UTF-8”;<br>String url = url1 + url2 + url3;<br>4、构建数据库连接对象</p>
-<p>Connection conn = DriverManager.getConnection(url);<br>5、构建SQL语句，创建数据库操作对象</p>
-<p>String sql = “select * from loginInfo where username=?”;<br>        pstmt = conn.prepareStatement(sql);<br>pstmt.setString(1,username);//设置值<br>6、执行查询，得到查询结果集</p>
-<p>ResultSet rs = pstmt.executeQuery();<br>7、结果处理</p>
-<p>如果rs.next()为true,则说明该用户名存在，继续验证密码是否正确；否则该用户名不存在</p>
-<p>复制代码<br>if(rs.next()) {<br>            if(rs.getString(“password”).equals(password)) {<br>                %&gt;<center><h1>用户 &lt;%=rs.getString(“userName”)%&gt;登陆成功！</h1></center>&lt;%</p>
-<pre><code>    }
-    else {
-        %&gt;&lt;center&gt;&lt;h1&gt;密码错误！&lt;/h1&gt;&lt;/center&gt;&lt;%
-    }
-}    
-else {
-    %&gt;&lt;center&gt;&lt;h1&gt;用户名不存在！&lt;/h1&gt;&lt;/center&gt;
-&lt;%}</code></pre><p>复制代码</p>
-<p>8、释放资源</p>
-<p>复制代码<br> 　　   if(rs != null) {<br>            rs.close();<br>        }<br>        if(pstmt != null) {<br>            pstmt.close();<br>        }<br>        if(conn != null) {<br>            conn.close();<br>        }<br>复制代码</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/17/jsp登录界面/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-九大内置对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/31/九大内置对象/">九大内置对象</a>
+    <h1 class="article-title" itemprop="name">
+      九大内置对象
     </h1>
   
 
@@ -389,6 +302,27 @@ else {
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -396,16 +330,84 @@ else {
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/31/九大内置对象/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/31/九大内置对象/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/11/17/jsp登录界面/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          jsp登录界面
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/31/jsp九大内置对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jsp九大内置对象</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -425,708 +427,14 @@ else {
 
 
 
-
-  
-    <article id="post-jsp九大内置对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/31/jsp九大内置对象/">jsp九大内置对象</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/31/jsp九大内置对象/" class="archive-article-date">
-  	<time datetime="2019-10-31T09:22:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>   JSP内置对象，是指可以不加声明和创建就可以在JSP页面脚本(Java程序片和Java表达式)中使用的成员变量。<br>   JSP共有以下9种基本内置组件(可与ASP的6种内部组件相对应):</p>
-<p>1.request对象<br>   客户端的请求信息被封装在request对象中，通过它才能了解到客户的需求，然后做出响应。它是   HttpServletRequest类的实例。<br>   request对象具有请求域,即完成客户端的请求之前,该对象一直有效。</p>
-<p>序号 方 法 说 明</p>
-<p>   1 object getAttribute(String name) 返回指定属性的属性值</p>
-<p>   2 Enumeration getAttributeNames() 返回所有可用属性名的枚举</p>
-<p>   3 String getCharacterEncoding() 返回字符编码方式</p>
-<p>   4 int getContentLength() 返回请求体的长度(以字节数)</p>
-<p>   5 String getContentType() 得到请求体的MIME类型</p>
-<p>   6 ServletInputStream getInputStream() 得到请求体中一行的二进制流</p>
-<p>   7 String getParameter(String name) 返回name指定参数的参数值</p>
-<p>   8 Enumeration getParameterNames() 返回可用参数名的枚举</p>
-<p>   9 String[] getParameterValues(String name) 返回包含参数name的所有值的数组</p>
-<p>   10 String getProtocol() 返回请求用的协议类型及版本号</p>
-<p>   11 String getScheme() 返回请求用的计划名,如:http.https及ftp等</p>
-<p>   12 String getServerName() 返回接受请求的服务器主机名</p>
-<p>   13 int getServerPort() 返回服务器接受此请求所用的端口号</p>
-<p>   14 BufferedReader getReader() 返回解码过了的请求体</p>
-<p>   15 String getRemoteAddr() 返回发送此请求的客户端IP地址</p>
-<p>   16 String getRemoteHost() 返回发送此请求的客户端主机名</p>
-<p>   17 void setAttribute(String key,Object obj) 设置属性的属性值</p>
-<p>   18 StringgetRealPath(String path) 返回一虚拟路径的真实路径</p>
-<p>   19 String request.getContextPath() 返回上下文路径</p>
-<p>2.response对象<br>   response对象包含了响应客户请求的有关信息，但在JSP中很少直接用到它。它是HttpServletResponse类的实例。<br>   response对象具有页面作用域，即访问一个页面时，该页面内的response对象只能对这次访问有效，其它页面的response对象对当前页面无效。</p>
-<p>序号 方 法 说 明</p>
-<p>   1 String getCharacterEncoding() 返回响应用的是何种字符编码</p>
-<p>   2 ServletOutputStream getOutputStream() 返回响应的一个二进制输出流</p>
-<p>   3 PrintWriter getWriter() 返回可以向客户端输出字符的一个对象</p>
-<p>   4 void setContentLength(int len) 设置响应头长度</p>
-<p>   5 void setContentType(String type) 设置响应的MIME类型</p>
-<p>   6 sendRedirect(java.lang.String location) 重新定向客户端的请求</p>
-<p>3.session对象</p>
-<p>   session对象指的是客户端与服务器的一次会话，从客户端连到服务器的一个WebApplication开始，直到客户端与服务器断开连接为止。它是HttpSession类的实例。<br>   Session对象是一个JSP内置对象，它在第一个JSP页面被装载时自动创建，完成会话期管理。从一个客户打开浏览器并连接到服务器开始，到客户关闭浏览器离开这个服务器结束，被称为一个会话。当一个客户访问一个服务器时，可能会在这个服务器的几个页面之间切换，服务器应当通过某种办法知道这是一个客户，就需要Session对象。<br>   session对象具有会话作用域。</p>
-<p>序号 方 法 说 明</p>
-<p>   1 long getCreationTime() 返回SESSION创建时间</p>
-<p>   2 public String getId() 返回SESSION创建时JSP引擎为它设的唯一ID号</p>
-<p>   3 long getLastAccessedTime() 返回此SESSION里客户端最近一次请求时间</p>
-<p>   4 int getMaxInactiveInterval() 返回两次请求间隔多长时间此SESSION被取消(ms)</p>
-<p>   5 String[] getValueNames() 返回一个包含此SESSION中所有可用属性的数组</p>
-<p>   6 void invalidate() 取消SESSION，使SESSION不可用</p>
-<p>   7 boolean isNew() 返回服务器创建的一个SESSION,客户端是否已经加入</p>
-<p>   8 void removeValue(String name) 删除SESSION中指定的属性</p>
-<p>   9 void setMaxInactiveInterval() 设置两次请求间隔多长时间此SESSION被取消(ms)</p>
-<p>4.out对象<br>   out对象是JspWriter类的实例,是向客户端输出内容常用的对象</p>
-<p>序号 方 法 说 明</p>
-<p>   1 void clear() 清除缓冲区的内容</p>
-<p>   2 void clearBuffer() 清除缓冲区的当前内容</p>
-<p>   3 void flush() 清空流</p>
-<p>   4 int getBufferSize() 返回缓冲区以字节数的大小，如不设缓冲区则为0</p>
-<p>   5 int getRemaining() 返回缓冲区还剩余多少可用</p>
-<p>   6 boolean isAutoFlush() 返回缓冲区满时，是自动清空还是抛出异常</p>
-<p>   7 void close() 关闭输出流</p>
-<p>5.page对象<br>   page对象就是指向当前JSP页面本身，有点象类中的this指针，它是java.lang.Object类的实例</p>
-<p>序号 方 法 说 明</p>
-<p>   1 class getClass 返回此Object的类</p>
-<p>   2 int hashCode() 返回此Object的hash码</p>
-<p>   3 boolean equals(Object obj) 判断此Object是否与指定的Object对象相等</p>
-<p>   4 void copy(Object obj) 把此Object拷贝到指定的Object对象中</p>
-<p>   5 Object clone() 克隆此Object对象</p>
-<p>   6 String toString() 把此Object对象转换成String类的对象</p>
-<p>   7 void notify() 唤醒一个等待的线程</p>
-<p>   8 void notifyAll() 唤醒所有等待的线程</p>
-<p>   9 void wait(int timeout) 使一个线程处于等待直到timeout结束或被唤醒</p>
-<p>   10 void wait() 使一个线程处于等待直到被唤醒</p>
-<p>   11 void enterMonitor() 对Object加锁</p>
-<p>   12 void exitMonitor() 对Object开锁</p>
-<p>6.折叠application对象<br>   application对象实现了用户间数据的共享，可存放全局变量。它开始于服务器的启动，直到服务器的关闭，在此期间，此对象将一直存在;这样在用户的前后连接或不同用户之间的连接中，可以对此对象的同一属性进行操作;在任何地方对此对象属性的操作，都将影响到其他用户对此的访问。服务器的启动和关闭决定了application对象的生命。它是ServletContext类的实例。</p>
-<p>序号 方 法 说 明</p>
-<p>   1 Object getAttribute(String name) 返回给定名的属性值</p>
-<p>   2 Enumeration getAttributeNames() 返回所有可用属性名的枚举</p>
-<p>   3 void setAttribute(String name,Object obj) 设定属性的属性值</p>
-<p>   4 void removeAttribute(String name) 删除一属性及其属性值</p>
-<p>   5 String getServerInfo() 返回JSP(SERVLET)引擎名及版本号</p>
-<p>   6 String getRealPath(String path) 返回一虚拟路径的真实路径</p>
-<p>   7 ServletContext getContext(String uripath) 返回指定WebApplication的application对象</p>
-<p>   8 int getMajorVersion() 返回服务器支持的Servlet API的最大版本号</p>
-<p>   9 int getMinorVersion() 返回服务器支持的Servlet API的最小版本号</p>
-<p>   10 String getMimeType(String file) 返回指定文件的MIME类型</p>
-<p>   11 URL getResource(String path) 返回指定资源(文件及目录)的URL路径</p>
-<p>   12 InputStream getResourceAsStream(String path) 返回指定资源的输入流</p>
-<p>   13 RequestDispatcher getRequestDispatcher(String uripath) 返回指定资源的RequestDispatcher对象</p>
-<p>   14 Servlet getServlet(String name) 返回指定名的Servlet</p>
-<p>   15 Enumeration getServlets() 返回所有Servlet的枚举</p>
-<p>   16 Enumeration getServletNames() 返回所有Servlet名的枚举</p>
-<p>   17 void log(String msg) 把指定消息写入Servlet的日志文件</p>
-<p>   18 void log(Exception exception,String msg) 把指定异常的栈轨迹及错误消息写入Servlet的日志文件</p>
-<p>   19 void log(String msg,Throwable throwable) 把栈轨迹及给出的Throwable异常的说明信息 写入Servlet的日志文件</p>
-<p>7.折叠exception对象<br>   exception对象是一个例外对象，当一个页面在运行过程中发生了例外，就产生这个对象。如果一个JSP页面要应用此对象，就必须把isErrorPage设为true，否则无法编译。他实际上是java.lang.Throwable的对象</p>
-<p>序号 方 法 说 明</p>
-<p>   1 String getMessage() 返回描述异常的消息</p>
-<p>   2 String toString() 返回关于异常的简短描述消息</p>
-<p>   3 void printStackTrace() 显示异常及其栈轨迹</p>
-<p>   4 Throwable FillInStackTrace() 重写异常的执行栈轨迹</p>
-<p>8.折叠pageContext对象<br>   pageContext对象提供了对JSP页面内所有的对象及名字空间的访问，也就是说他可以访问到本页所在的SESSION，也可以取本页面所在的application的某一属性值，他相当于页面中所有功能的集大成者，它的本类名也叫pageContext。</p>
-<p>序号 方 法 说 明</p>
-<p>   1 JspWriter getOut() 返回当前客户端响应被使用的JspWriter流(out)</p>
-<p>   2 HttpSession getSession() 返回当前页中的HttpSession对象(session)</p>
-<p>   3 Object getPage() 返回当前页的Object对象(page)</p>
-<p>   4 ServletRequest getRequest() 返回当前页的ServletRequest对象(request)</p>
-<p>   5 ServletResponse getResponse() 返回当前页的ServletResponse对象(response)</p>
-<p>   6 Exception getException() 返回当前页的Exception对象(exception)</p>
-<p>   7 ServletConfig getServletConfig() 返回当前页的ServletConfig对象(config)</p>
-<p>   8 ServletContext getServletContext() 返回当前页的ServletContext对象(application)</p>
-<p>   9 void setAttribute(String name,Object attribute) 设置属性及属性值</p>
-<p>   10 void setAttribute(String name,Object obj,int scope) 在指定范围内设置属性及属性值</p>
-<p>   11 public Object getAttribute(String name) 取属性的值</p>
-<p>   12 Object getAttribute(String name,int scope) 在指定范围内取属性的值</p>
-<p>   13 public Object findAttribute(String name) 寻找一属性,返回起属性值或NULL</p>
-<p>   14 void removeAttribute(String name) 删除某属性</p>
-<p>   15 void removeAttribute(String name,int scope) 在指定范围删除某属性</p>
-<p>   16 int getAttributeScope(String name) 返回某属性的作用范围</p>
-<p>   17 Enumeration getAttributeNamesInScope(int scope) 返回指定范围内可用的属性名枚举</p>
-<p>   18 void release() 释放pageContext所占用的资源</p>
-<p>   19 void forward(String relativeUrlPath) 使当前页面重导到另一页面</p>
-<p>   20 void include(String relativeUrlPath) 在当前位置包含另一文件</p>
-<p>9.折叠config对象<br>   config对象是在一个Servlet初始化时，JSP引擎向它传递信息用的，此信息包括Servlet初始化时所要用到的参数(通过属性名和属性值构成)以及服务器的有关信息(通过传递一个ServletContext对象)</p>
-<p>序号 方 法 说 明</p>
-<p>   1 ServletContext getServletContext() 返回含有服务器相关信息的ServletContext对象</p>
-<p>   2 String getInitParameter(String name) 返回初始化参数的值</p>
-<p>   3 Enumeration getInitParameterNames() 返回Servlet初始化所需所有参数的枚举</p>
-<p>内置对象产生的时机<br>   一个JSP页面对应一个Servlet类，每个Servlet类有三个方法:</p>
-<p>   init方法:初始化JSP/Servlet的方法。</p>
-<p>   destory方法:销毁JSP/Servlet的方法。</p>
-<p>   service方法:对用户请求产生响应的方法。</p>
-<p>request对象和response对象是service方法的形参，application对象，page对象，out对象，pageContext对象，session对象都是service的方法中生成的实例。这些内容在struts自媒体网站上有详细的介绍。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/31/jsp九大内置对象/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MySQL表查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/30/MySQL表查询/">MySQL表查询</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/30/MySQL表查询/" class="archive-article-date">
-  	<time datetime="2019-10-30T12:26:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Mysql第四次课<br> truncate清空表<br> truncate table 表名<br> is  null<br> is not null<br> 模糊查询<br>    like<br>    % 代表一个或多个字符<br>    _ 代表一个字符<br> exists存在<br>    exists里边括住的是一个<br>    查询语句,如果查询语句<br>    有结果，外部查询就正常<br>    执行，如果没结果，外部<br>    查询不执行<br> not exists不存在<br>*/<br>SELECT * FROM course<br>              WHERE cnam IS NOT NULL<br>#模糊查询<br>#查询出姓名中包含“三”的<br>#学生的信息<br>SELECT * FROM StudentInfo<br>      WHERE snam LIKE ‘%三%’;<br>#查询出姓周的同学信息<br>SELECT * FROM StudentInfo<br>      WHERE snam LIKE ‘周%’<br>#如果有安阳市的学生，就把<br>#本班所有学生的信息查询<br>#出来<br>SELECT * FROM StudentInfo<br>           WHERE EXISTS(<br>SELECT * FROM StudentInfo<br>         WHERE address LIKE ‘%许昌%’<br>)</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/30/MySQL表查询/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据库的设计规范" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/30/数据库的设计规范/">数据库的设计规范</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/30/数据库的设计规范/" class="archive-article-date">
-  	<time datetime="2019-10-30T12:21:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>数据库的设计规范<br>  数据库的设计三大范式<br>     第一范式：<br>       表中的字段都是不可分割的最小的单元数据<br>     第二范式：<br>        每张表只能描述一件事，每张表都要有主键，<br>     第三范式：<br>         非主键字段，要依赖于主键字段，换句话说，非主键字段与主键字段直接相关。<br>         在设计表时，尽可能依照三大范式，但有的时候为了性能，会牺牲范式。<br>      Mysql运算符：<br>        算术运算符：+ - * /<br>        逻辑运算符: and or !<br>        比较运算符: &gt; &lt; &gt;= &lt;= &lt;&gt;(不等于) !=<br>   聚合函数<br>      count() 求行数<br>      sun() 求一列的和<br>      avg()去平均值<br>      max()求最大值<br>      min()求最小值<br>  Mysql常用关键字<br>    in     查询在什么什么在选项中的数据 where name in(‘张三’，’李四’)<br>        把name等于张三李四的查询出来<br>    not in    where name not in(‘张三’，’李四’)<br>        把name不等于张三李四的查询出来    </p>
-<pre><code>distinct 去重
-
-limit     查询出表的前几行
-
-between...and...  在什么什么之间
-
-as</code></pre><p>*/</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/30/数据库的设计规范/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Eclipse和MyEclipse配置Tomcat，项目的部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/30/Eclipse和MyEclipse配置Tomcat，项目的部署/">Eclipse和MyEclipse配置Tomcat，项目的部署</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/30/Eclipse和MyEclipse配置Tomcat，项目的部署/" class="archive-article-date">
-  	<time datetime="2019-10-30T12:07:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Eclipse<br>1.安装Tomcat步骤网址：<br><a href="https://jingyan.baidu.com/article/e8cdb32be15b0437052bad17.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/e8cdb32be15b0437052bad17.html</a><br>2.Eclipse环境下如何配置Tomcat，并且把项目部署到Tomcat服务器上：<br><a href="https://blog.csdn.net/yerenyuan_pku/article/details/51830104" target="_blank" rel="noopener">https://blog.csdn.net/yerenyuan_pku/article/details/51830104</a><br>3、如何在eclipse中修改jsp的编码为UTF-8：<br><a href="https://blog.csdn.net/hanqiuyue123/article/details/89414261" target="_blank" rel="noopener">https://blog.csdn.net/hanqiuyue123/article/details/89414261</a></p>
-<p>MyEclipse</p>
-<ol>
-<li>MyEclipse启动Tomcat，把项目部署到Tomcat服务器上：<br><a href="https://jingyan.baidu.com/article/fea4511ad81682f7bb912501.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/fea4511ad81682f7bb912501.html</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/30/Eclipse和MyEclipse配置Tomcat，项目的部署/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GitHub使用教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/30/GitHub使用教程/">GitHub使用教程</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/30/GitHub使用教程/" class="archive-article-date">
-  	<time datetime="2019-10-30T12:01:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>目录<br>一、前期准备    2<br>二、软件安装    2<br>三、Hexo配置流程    16<br>四、部署到GitHub服务器    21</p>
-<p>五、发布博客内容    23</p>
-<p>Github个人技术博客搭建步骤<br>一、前期准备<br>1、GitHub账号<br>注册地址：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a><br>2、Node.js环境<br>下载地址：<a href="https://nodejs.org/download/" target="_blank" rel="noopener">https://nodejs.org/download/</a><br>.</p>
-<p>3、Git 软件：下载地址<a href="http://git-scm.com/download/" target="_blank" rel="noopener">http://git-scm.com/download/</a><br>二、软件安装<br>1、注册GitHub账号<br>1)Github账户注册和新建项目，项目必须要遵守格式：账户名.github.io，此处账号名作为后期个人博客的地址使用2。并且需要勾选Initialize this repository with a README。（如果没有勾选，后期要创建README文件即可）</p>
-<p>2)创建一个新的repository(代码仓库), 注意，名称必须是xxx.github.io 格式，并且xxx必须是你在GitHub的用户名。</p>
-<p>3)在建好的项目右侧有个settings按钮，点击它，向下拉到GitHub Pages，你会看到那边有个网址，可以访问它。你将会惊奇的发现该项目已经被部署到网络上，能够通过外网来访问它。</p>
-<p>2.安装Node.js<br>在node.js指定地址下载，采用最新的版本即可。</p>
-<p>本文实例以v10.16.3 版本为例，其他版本类似， 安装步骤：<br>步骤 1 : 双击下载后的安装包 v10.16.3，如下所示：</p>
-<p>步骤 2 : 点击以上的Run(运行)，将出现如下界面：</p>
-<p>步骤 3 : 勾选接受协议选项，点击 next（下一步） 按钮 :</p>
-<p>步骤 4 : Node.js默认安装目录为 “C:\Program Files\nodejs&quot; , 你可以修改目录，并点击 next（下一步）：<br>步骤 5 : 点击树形图标来选择你需要的安装模式 , 然后点击下一步 next（下一步）</p>
-<p>步骤 6 :点击 Install（安装） 开始安装Node.js。你也可以点击 Back（返回）来修改先前的配置。 然后并点击 next（下一步）：</p>
-<p>安装过程：</p>
-<p>点击 Finish（完成）按钮退出安装向导。</p>
-<p>检查Node.js版本</p>
-<p>3.安装Git<br>指定位置，进行下载</p>
-<p>步骤1：从git官网下一个git安装包并安装。这里以64位讲解Git-2.23.0-64-bit.exe</p>
-<p>步骤2：点击git.exe安装程序，点击【next】，根据自己的情况，选择程序的安装目录。</p>
-<p>步骤3：继续点击“Next”，显示截图如下：</p>
-<p>步骤4：.选择完之后，点击“Next”，显示截图如下：</p>
-<p>步骤5：.点击“Next”，显示截图如下：</p>
-<p>选择编辑器，看自己喜好。<br>步骤6：继续点击“Next”，设置环境变量</p>
-<p>步骤7：选择之后，继续点击“Next”，显示如下：</p>
-<p>步骤8：选择之后，继续点击“Next”，显示如下：</p>
-<p>步骤9：选择之后，继续点击“Next”，显示如下：</p>
-<p>步骤10：.选择之后，继续点击“Next”，显示如下：</p>
-<p>步骤11：选择之后，继续点击“Next”，显示如下：</p>
-<p>步骤12：选择之后，点击“Install”，显示如下：</p>
-<p>步骤13：安装完毕后，点击“finish”</p>
-<p>验证是否安装成功，在桌面上点击鼠标右键，点击Git Bash Here，弹出交互界面，表示正确安装成功！</p>
-<p>三、Hexo配置流程<br>1、安装Hexo<br>Hexo 是一款基于 Node.js 的静态博客框架。Hexo 使用 Markdown 解析文章，用户在本地安装Hexo并进行写作，通过一条命令，Hexo即可利用靓丽的主题自动生成静态网页。<br>1）新建文件夹hexo<br>首先创建一个文件夹，用来存放Hexo模板和项目，然后进入 hexo 文件夹，鼠标右键点击Git Bash Here。 </p>
-<p>2）安装hexo基础框架</p>
-<p>// 这是安装hexo的基础框架（此处要求已经安装了node.js环境）<br>第一步：npm install hexo-cli -g   </p>
-<p>第二步：hexo init blog </p>
-<p>它就会在当前目录下生成一个blog的文件夹，并在里面生成相关配置信息。<br>第三步：cd blog<br>切换到blog目录下</p>
-<p>第四步：npm install<br>安装必备的组件，安装完成之后，blog文件夹的目录结构大致如下：</p>
-<p>// 编译生成静态页面，会在当前目录下生成一个新的叫做public的文件夹。<br>第五步：hexo g</p>
-<p>// 启动本地服务<br>第六步：hexo s</p>
-<p>打开链接<a href="http://localhost:4000，看到这样的网页就成功啦。" target="_blank" rel="noopener">http://localhost:4000，看到这样的网页就成功啦。</a></p>
-<p>2、    hexo主题设置，这里以主题yilia为例进行说明。<br>1）安装主题（此处当前目录为blog）<br>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</p>
-<p>2）启用主题<br>cd themes/yilia<br>git pull   //获取远程内容</p>
-<p>3）    修改配置文件<br>修改hexo目录下的_config.yml配置文件中的theme属性，将其设置为我们前面克隆下来的主体样式，此处theme: yilia<br>4）    重启服务<br>切换到blog目录<br>hexo g  # 重新生成静态文件<br>hexo s # 启动本地web服务器<br>现在打开<a href="http://localhost:4000，会看到我们已经应用了一个新的主题。" target="_blank" rel="noopener">http://localhost:4000，会看到我们已经应用了一个新的主题。</a></p>
-<p>四、部署到GitHub服务器<br>1、使用git命令行部署（optional）<br>   此处我们采用git命令来完成部署的工作。<br>1)cd d:/hexo/blog<br>2)git clone  <a href="https://github.com/fang235/fang235.github.io" target="_blank" rel="noopener">https://github.com/fang235/fang235.github.io</a>  .deploy/fang235.github.io</p>
-<p>将我们之前创建的repo克隆到本地，新建一个目录叫做.deploy用于存放克隆的代码。<br>3)hexo generate   //生成静态文件<br>cp -R public/* .deploy/fang235.github.io  //复制文件<br>cd .deploy/fang235.github.io //切换目录<br>git add .  //将需要提交的代码添加到暂存区<br>git commit -m “update” //将暂存区内容提交给本地版本库<br>git push //推送给远程服务器</p>
-<p>简单解释一下，hexo generate生成public文件夹下的新内容，然后将其拷贝至fang235.github.io的git目录下，然后使用git commit命令提交代码到fang235.github.io这个repo的master branch上。<br>需要部署的时候，执行第三个步骤。执行过程中可能需要让你输入Github账户的用户名及密码，按照提示操作即可。<br>2、    验证<br>打开浏览器，输入地址：<a href="https://fang.github.io/" target="_blank" rel="noopener">https://fang.github.io/</a> ，就可以看到我们的博客上线了哈哈哈！！！</p>
-<p>五、发布博客内容<br>1、创建博客标题<br>hexo new “post title with whitespace”</p>
-<p>2、编写博客内容<br>找到创建的md文件，使用编辑器打开，按照Markdown的格式，编写博客内容，编写完成之后，执行以下代码，将博客内容推送到远程服务器上。<br>hexo generate   //生成静态文件<br>cp -R public/* .deploy/youngnavy764.github.io  //复制文件<br>cd .deploy/youngnavy764.github.io //切换目录<br>git add .  //将需要提交的代码添加到暂存区<br>git commit -m “update” //将暂存区内容提交给本地版本库<br>git push //推送给远程服务器</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/30/GitHub使用教程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据库的简单用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/30/数据库的简单用法/">数据库的简单用法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/30/数据库的简单用法/" class="archive-article-date">
-  	<time datetime="2019-10-30T11:54:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.创建数据库<br>create database 数据库名;<br>查看数据库的定义<br>show create database;<br>删除数据库<br>drop database 数据库名;<br>创建数据表<br>create table 表名;<br>2.主键约束：primary key;<br>列名 数据类型 primary key;<br>设置字段为自增长：auto_increment;只有主键可以使用。<br>列名 数据类型 auto_increment primary key;<br>外键约束：foreign key;<br>constraint 外键名 foreign key 字段名<br>references 主表名 主键列1，…;<br>非空约束：not null；<br>字段名 数据类型 not null;<br>默认约束：default;<br>字段名 数据类型 default 默认值;<br>唯一约束：unique;<br>字段名 数据类型 unique;<br>3.表达式<br>表名 字段名表达式；<br>select 目标表达式；<br>where 条件表达式；<br>插入数据<br>一次一行：insert 表名 （列名，…）<br>values(值1，…);<br>一次多行：insert 表名 （列名，…）<br>values(值1，…),(值2，…),(…);<br>修改表中数据：update;<br>update 表名 set 列名=值，… where 条件;<br>修改表中全部数据<br>update 表名 set 指定的字段进行修改 where 条件;<br>删除数据记录：delete;<br>delete 表名 where 条件;<br>删除全部数据记录<br>delete from 表名;<br>删除表中全部数据，只留下一个表的结构定义<br>truncate 表名;<br>4.数据查询<br>简单查询：排序（order by）、条件查询（where）、分组（group by）;<br>select 字段列表（*代表所有字段）from 表名 where 条件 order by 进行排序的字段 [asc(升序)丨desc（降序）] limit [位置偏移量] 行数;<br>使用AS关键字为字段定义别名<br>select 字段名1AS别名，字段名2AS别名…from 表名;<br>select 字段名1 别名，字段名2 别名…from 表名;<br>逻辑运算符：”not”,”and”,”or”;<br>distinct消除重复行<br>select distinct 列名 from 表名;<br>order by查询排序<br>select 列名，…from 表名 order by 列名 升序或降序;<br>mysql内置函数<br>连接字符串:concat;<br>select concat（’’，’’）;<br>返回字符串长度：length;<br>length(‘’);<br>将字符串转化成大写：upper;<br>upper(‘’);<br>去掉字符串左边空格<br>ltrim(‘ adc’)<br>去掉字符串右边的空格：<br>rtrim<br>去掉字符串两边的空格：<br>trim<br>替换字符串中的某个字母：<br>replace （’dasdas’ ,’d’,’c’）;<br>比较字符串中的 s1和s2<br>strcmp strcmp（s1,s2）;<br>从第5个位置截取长度为3的字符串：<br>substring (‘jidasdji’,5,3);<br>日期函数<br>获取当前日期和时间：select now(）;<br>获取当前日期函数：select curdate（）;<br>获取当前时间函数：select curtime（）;<br>系统函数<br>返回当前数据库名：select database（）;<br>5。模糊查询与分组查询;<br>用“%”通配多个字符<br>用“_”通配单个字符</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/30/数据库的简单用法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-第一次课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/30/第一次课/">第一次课</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/30/第一次课/" class="archive-article-date">
-  	<time datetime="2019-10-30T09:22:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>jsp输出当前时间<br>&lt;%@page import=”java.text.SimpleDateFormat”%&gt;<br>&lt;%@page import=”java.util.*”%&gt;<br>&lt;%@ page language=”java” contentType=”text/html; charset=UTF-8”<br>    pageEncoding=”UTF-8”%&gt;<br><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"></p>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>JSP在页面显示实时时间</title>
-</head>
-<body>
-    <% date d="new" date(); simpledateformat df="new" simpledateformat("yyyy-mm-dd hh:mm:ss"); string now="df.format(d);" %>
-
-<pre><code>当前时间：&lt;%=now %&gt;</code></pre></%></body>
-</html>
-
-<p>————————————————<br>版权声明：本文为CSDN博主「m0_38056893」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/m0_38056893/article/details/79766752" target="_blank" rel="noopener">https://blog.csdn.net/m0_38056893/article/details/79766752</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/30/第一次课/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一个博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/11/我的第一个博客/">我的第一个博客</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/11/我的第一个博客/" class="archive-article-date">
-  	<time datetime="2019-10-11T04:38:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>你好</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/11/我的第一个博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -1149,8 +457,8 @@ as</code></pre><p>*/</p>
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
