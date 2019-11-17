@@ -152,6 +152,69 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数据库的简单用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/30/数据库的简单用法/">数据库的简单用法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/30/数据库的简单用法/" class="archive-article-date">
+  	<time datetime="2019-10-30T11:54:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.创建数据库<br>create database 数据库名;<br>查看数据库的定义<br>show create database;<br>删除数据库<br>drop database 数据库名;<br>创建数据表<br>create table 表名;<br>2.主键约束：primary key;<br>列名 数据类型 primary key;<br>设置字段为自增长：auto_increment;只有主键可以使用。<br>列名 数据类型 auto_increment primary key;<br>外键约束：foreign key;<br>constraint 外键名 foreign key 字段名<br>references 主表名 主键列1，…;<br>非空约束：not null；<br>字段名 数据类型 not null;<br>默认约束：default;<br>字段名 数据类型 default 默认值;<br>唯一约束：unique;<br>字段名 数据类型 unique;<br>3.表达式<br>表名 字段名表达式；<br>select 目标表达式；<br>where 条件表达式；<br>插入数据<br>一次一行：insert 表名 （列名，…）<br>values(值1，…);<br>一次多行：insert 表名 （列名，…）<br>values(值1，…),(值2，…),(…);<br>修改表中数据：update;<br>update 表名 set 列名=值，… where 条件;<br>修改表中全部数据<br>update 表名 set 指定的字段进行修改 where 条件;<br>删除数据记录：delete;<br>delete 表名 where 条件;<br>删除全部数据记录<br>delete from 表名;<br>删除表中全部数据，只留下一个表的结构定义<br>truncate 表名;<br>4.数据查询<br>简单查询：排序（order by）、条件查询（where）、分组（group by）;<br>select 字段列表（*代表所有字段）from 表名 where 条件 order by 进行排序的字段 [asc(升序)丨desc（降序）] limit [位置偏移量] 行数;<br>使用AS关键字为字段定义别名<br>select 字段名1AS别名，字段名2AS别名…from 表名;<br>select 字段名1 别名，字段名2 别名…from 表名;<br>逻辑运算符：”not”,”and”,”or”;<br>distinct消除重复行<br>select distinct 列名 from 表名;<br>order by查询排序<br>select 列名，…from 表名 order by 列名 升序或降序;<br>mysql内置函数<br>连接字符串:concat;<br>select concat（’’，’’）;<br>返回字符串长度：length;<br>length(‘’);<br>将字符串转化成大写：upper;<br>upper(‘’);<br>去掉字符串左边空格<br>ltrim(‘ adc’)<br>去掉字符串右边的空格：<br>rtrim<br>去掉字符串两边的空格：<br>trim<br>替换字符串中的某个字母：<br>replace （’dasdas’ ,’d’,’c’）;<br>比较字符串中的 s1和s2<br>strcmp strcmp（s1,s2）;<br>从第5个位置截取长度为3的字符串：<br>substring (‘jidasdji’,5,3);<br>日期函数<br>获取当前日期和时间：select now(）;<br>获取当前日期函数：select curdate（）;<br>获取当前时间函数：select curtime（）;<br>系统函数<br>返回当前数据库名：select database（）;<br>5。模糊查询与分组查询;<br>用“%”通配多个字符<br>用“_”通配单个字符</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/30/数据库的简单用法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-第一次课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
